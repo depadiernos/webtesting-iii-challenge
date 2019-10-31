@@ -40,4 +40,8 @@ describe("the Dashboard component", () => {
     });
     expect(wrapper.getByText(/Locked/i)).toHaveClass("red-led");
   });
+  it("matches snapshot", async () => {
+    const wrapper = rtl.render(<Dashboard />);
+    expect(wrapper.asFragment()).toMatchSnapshot();
+  });
 });
