@@ -12,9 +12,19 @@ describe("the Controls component", () => {
     const button = wrapper.getByText(/Lock Gate/i);
     expect(button).toExist;
   });
-  it("shows Close Gate button", async () => {
+  it("shows Unlock Gate button", () => {
+    const wrapper = rtl.render(<Controls locked={true}/>);
+    const button = wrapper.getByText(/Unlock Gate/i);
+    expect(button).toExist;
+  });
+  it("shows Close Gate button", () => {
     const wrapper = rtl.render(<Controls />);
     const button = wrapper.getByText(/Close Gate/i);
+    expect(button).toExist;
+  });
+  it("shows Close Gate button", () => {
+    const wrapper = rtl.render(<Controls closed={true}/>);
+    const button = wrapper.getByText(/Open Gate/i);
     expect(button).toExist;
   });
   it("trigger toggleLocked function on click", () => {
